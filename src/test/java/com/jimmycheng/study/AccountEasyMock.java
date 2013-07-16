@@ -26,7 +26,7 @@ public class AccountEasyMock {
 
         /* = Now start testing our account */
         account.addStock(stockMock, 2);
-        assertEquals(new Double(84.0), account.getTotalValue());
+        assertEquals(84.0, account.getTotalValue(), 0.001);
         EasyMock.verify();
     }
 

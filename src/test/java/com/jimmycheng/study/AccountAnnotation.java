@@ -11,12 +11,15 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.Matchers.*;
 
+//In order to run initMocks we use the MockitoJUnitRunner which extends runner.
 @RunWith(MockitoJUnitRunner.class)
 public class AccountAnnotation {
 
-    @Mock
+    //Here we use @Mock, then we needn't create the mock class.
+    @Mock  
     private Stock stock;
 
+    //Mock object will be injected automatically like spring.
     @InjectMocks
     private Account account = new Account();
 

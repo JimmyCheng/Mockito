@@ -30,19 +30,17 @@ public class AccountMockito  {
 
     @Test
     public void testAddMoreStock() {
-
-        // very strange, why following 2 lines can not be put upward?
         Stock stockEbay = mock(Stock.class);
         when(stockEbay.getPrice()).thenReturn(42.00);
         
         Stock stockApple = mock(Stock.class);
         when(stockApple.getPrice()).thenReturn(300.00);
 
-        /* = Now start testing our portfolio */
+        /* = Now start testing our account */
         account.addStock(stockEbay, 2);
         account.addStock(stockApple, 3);
 
-        assertEquals(new Double(984.00), account.getTotalValue());
+        assertEquals(984.00, account.getTotalValue(), 0.001);
     }
 
 }
