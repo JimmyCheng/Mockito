@@ -1,19 +1,18 @@
 package com.jimmycheng.study;
 
-import junit.framework.TestCase;
-
+import static org.junit.Assert.*;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AccountEasyMock extends TestCase {
+public class AccountEasyMock {
 
     private Account account;
 
     @Before
     public void setUp() {
         account = new Account();
-        account.setName("Veera's portfolio.");
+        account.setName("Jimmy's Account.");
     }
 
     @Test
@@ -22,13 +21,12 @@ public class AccountEasyMock extends TestCase {
         Stock stockMock = EasyMock.createMock(Stock.class);
         /* = Setup our mock object with the expected values */
         EasyMock.expect(stockMock.getPrice()).andReturn(42.00).times(1);
+        
         EasyMock.replay(stockMock);
 
-        /* = Now start testing our Account */
-
+        /* = Now start testing our account */
         account.addStock(stockMock, 2);
-        assertEquals(84.00, account.getTotalValue());
-
+        assertEquals(new Double(84.0), account.getTotalValue());
         EasyMock.verify();
     }
 

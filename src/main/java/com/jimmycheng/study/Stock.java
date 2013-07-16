@@ -21,4 +21,7 @@ public class Stock {
         return 1.0;
     }
     
+    public void displayStockinfo(){
+    }
+    
 }
