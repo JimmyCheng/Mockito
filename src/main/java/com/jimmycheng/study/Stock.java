@@ -2,28 +2,23 @@ package com.jimmycheng.study;
 
 public class Stock {
 
-	private String name;
-	private int quantity;
+    private String name;
 
-	public Stock(String name, int quantity) {
-		this.name = name;
-		this.quantity = quantity;
-	}
+    public Stock(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
+    public Double getPrice() {
+        System.out.println("User should not call this in unit testing!");
+        return 1.0;
+    }
+    
 }
